@@ -49,12 +49,37 @@ const readAndAppend = (newNote, pathway) => {
     } else {
       const parsedData = JSON.parse(data);
       parsedData.push(newNote);
-      fs.writeFile(pathway, JSON.stringify(parsedData))
+      fs.writeFile(pathway, JSON.stringify(parsedData), (err) => {
+        err ? console.error(err) : console.info(`Data written to ${pathway}`)
+      } )
+
+      
       
     }
   });
 };
 
+//DELETE
+const deleteItem = (identification) => {
+    let idExists = false;
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        const parsedData = JSON.parse(data);
+        for (let i = 0; i<parsedData.length; i++){
+            if (parsedData[i].id === identification){
+                parsedData.splice(i,1)
+                idExists = true;
+                fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err) => {
+            err ? console.error(err) : console.info(`id deleted from db.json database`)
+                  } )
+            }
+        }
+                
+      }
+    });
+  };
 
 
-module.exports = {readFile, readAndAppend}
+module.exports = {readFile, readAndAppend, deleteItem}

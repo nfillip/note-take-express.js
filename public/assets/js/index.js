@@ -33,7 +33,7 @@ const getNotes = () =>
     },
   });
 
-const saveNote = (note) =>
+const saveNote = (note) => {
   fetch('/api/notes', {
     method: 'POST',
     headers: {
@@ -41,15 +41,17 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   });
-
-const deleteNote = (id) =>
+  location.reload();
+}
+const deleteNote = (id) => {
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
   });
-
+  location.reload();
+}
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
