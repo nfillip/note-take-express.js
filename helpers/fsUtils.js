@@ -27,7 +27,7 @@ const readAndAppend = (newNote, pathway) => {
     const parsedData = JSON.parse(data);
       parsedData.push(newNote);
       writeFile(pathway, JSON.stringify(parsedData))
-      .then((data) => console.log("User-input written and appended to list successfully"))
+      .then((data) => console.log("📘 User-input written and appended to list successfully"))
       .catch((error) => console.log(error));
       
   })
@@ -53,10 +53,10 @@ const readAndAppend = (newNote, pathway) => {
 const deleteItem = (parsedData, i) => {
   parsedData.splice(i,1)
   writeFile('./db/db.json', JSON.stringify(parsedData))
-  .then((data) => console.log("List item deleted successfully from database"))
+  .then((data) => console.log("📙 List item deleted successfully from database"))
   .catch((error) => console.log(error))
   }
-  
+
 //DELETE - call back functions
 // const deleteItem = (identification) => {
 //     let idExists = false;

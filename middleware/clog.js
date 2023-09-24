@@ -11,7 +11,7 @@ const clog = (req, res, next) => {
         break;
       }
       default:
-        console.log(`📙${fgCyan}${req.method} request to ${req.path}`);
+        console.log(`📙 ${fgCyan}${req.method} request to ${req.path}`);
     }
   
     next();
