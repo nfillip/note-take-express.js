@@ -10,10 +10,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use('/api', api);
+app.use(clog);
 
 //GETS
 app.get('/notes', (req,res) => {
-    console.log(`${req.method} received to send to notes.html`);
+    
     res.sendFile(path.join(__dirname, '/public/notes.html'))
     
 })

@@ -12,6 +12,7 @@ notes.get('/', (req,res) => {
     readFile('./db/db.json', 'utf-8')
     .then((data) => {
         res.json(JSON.parse(data))
+        
     })
     .catch((error) => console.log(error));
     });
