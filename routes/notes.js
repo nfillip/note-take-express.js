@@ -4,11 +4,11 @@ const notes = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 //uses fs-promise
 const {readFile,readAndAppend, deleteItem} = require('../helpers/fsUtils');
-
+const fgCyan = '\x1b[36m';
 //GET request
 //http://localhost:3001/api/notes
 notes.get('/', (req,res) => {
-    console.log(`📗 ${req.method} request received to read the db.json file and return all saved notes as JSON`);
+    console.log(`📗 ${fgCyan}${req.method} request received to read the db.json file and return all saved notes as JSON`);
     readFile('./db/db.json', 'utf-8')
     .then((data) => {
         res.json(JSON.parse(data))
@@ -21,7 +21,7 @@ notes.get('/', (req,res) => {
 //POST request
 //http://localhost:3001/api/notes
 notes.post('/', (req,res) => {
-    console.log(`📘 ${req.method} request received to save new note on request.body and add it to db.json file. Then return new note to client. Each file needs a unique id.`);
+    console.log(`📘 ${fgCyan}${req.method} request received to save new note on request.body and add it to db.json file. Then return new note to client. Each file needs a unique id.`);
     const newNote = req.body;
     const {title, text} = req.body;
     if(title && text){
@@ -45,7 +45,7 @@ notes.post('/', (req,res) => {
 notes.delete('/:identification', (req,res) => {
     let idExists = false;
     const item = req.params.identification;
-    console.log(`📙 ${req.method} received: deleting id ${item}`);
+    console.log(`📙 ${fgCyan}{req.method} received: deleting id ${item}`);
     readFile('./db/db.json', 'utf-8')
     .then((data) => {
         const parsedData = JSON.parse(data)
