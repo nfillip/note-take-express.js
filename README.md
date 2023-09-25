@@ -56,9 +56,9 @@ Github Profile: [https://github.com/nfillip](https://github.com/nfillip)
     
 
 ## Website
-Github Repo: [https://github.com/nfillip/note-take-express.js](https://github.com/nfillip/note-take-express.js)
-Heroku Repo:[https://note-take-express-js-8f46d967182f.herokuapp.com/](https://note-take-express-js-8f46d967182f.herokuapp.com/)
-Heroku Deployed Site: [https://note-take-express-js-8f46d967182f.herokuapp.com/](https://note-take-express-js-8f46d967182f.herokuapp.com/)
+Github Repo: [https://github.com/nfillip/note-take-express.js](https://github.com/nfillip/note-take-express.js)<br>
+Heroku Repo:[https://note-take-express-js-8f46d967182f.herokuapp.com/](https://note-take-express-js-8f46d967182f.herokuapp.com/)<br>
+Heroku Deployed Site: [https://note-take-express-js-8f46d967182f.herokuapp.com/](https://note-take-express-js-8f46d967182f.herokuapp.com/)<br>
 ![Alt text](./Assets/website-screenshot.PNG)
 
 
