@@ -3,7 +3,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  
+   
 }
 
 .save-note {
@@ -76,4 +76,8 @@ body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+#toggle-label{
+  color: white;
 }

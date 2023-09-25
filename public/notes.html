@@ -16,28 +16,33 @@
   </head>
 
   <body>
-    <nav class="navbar bg-info">
+    <nav class="navbar bg-info" id = "navBar">
       <a class="navbar-brand text-light p-3" href="/">Note Taker </a>
+      <div class="form-check form-switch" id = "toggleSwitch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label id = "toggle-label" class="form-check-label" for="flexSwitchCheckDefault">Dark Mode?</label>
+      </div>
       <div class="icons">
         <i class="fas fa-save text-light save-note"></i>
         <i class="fas fa-plus text-light new-note"></i>
       </div>
     </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-4 list-container">
-          <div class="card">
+    <div class="container-fluid" id = "divBoundTheme">
+      <div class="row ">
+        <div class="col-4 list-container ">
+          <div class="card " id = "div-theme">
             <ul class="list-group"></ul>
           </div>
         </div>
         <div class="col-8">
           <input
+            id = "input-theme"
             class="note-title"
             placeholder="Note Title"
             maxlength="28"
             type="text"
           />
-          <textarea class="note-textarea" placeholder="Note Text"></textarea>
+          <textarea id = "text-area-theme" class="note-textarea" placeholder="Note Text"></textarea>
         </div>
       </div>
     </div>

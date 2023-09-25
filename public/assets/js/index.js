@@ -3,13 +3,14 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-
+let themeSwitch;
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
+  themeSwitch = document.getElementById("toggleSwitch");
 }
 
 // Show an element
@@ -182,4 +183,57 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
+//THEMES CHANGE
+let navBar = document.getElementById("navBar")
+let toggleLabel = document.getElementById("toggle-label")
+let textAreaTheme = document.getElementById("text-area-theme")
+let inputTheme = document.getElementById("input-theme")
+let divTheme = document.getElementById("div-theme")
+let divBoundTheme = document.getElementById("divBoundTheme")
+
+function buttonActive() {
+  localStorage.setItem("active", true)
+}
+function changeTheme() {
+  if(localStorage.getItem("theme") === "light"){
+  navBar.classList.remove("bg-info");
+  navBar.classList.add("bg-secondary");
+  divTheme.classList.add("bg-dark");
+  inputTheme.classList.add("bg-dark");
+  textAreaTheme.classList.add("bg-dark");
+  divBoundTheme.classList.add("bg-dark");
+  toggleLabel.textContent = "Light Mode?"
+  localStorage.setItem("theme","dark");
+  
+  }else if (localStorage.getItem("theme") === "dark"){
+  navBar.classList.add("bg-info");
+  navBar.classList.remove("bg-secondary");
+  divTheme.classList.remove("bg-dark");
+  inputTheme.classList.remove("bg-dark");
+  textAreaTheme.classList.remove("bg-dark");
+  divBoundTheme.classList.remove("bg-dark");
+  toggleLabel.textContent = "Dark Mode?";
+  localStorage.setItem("theme", "light");
+  }
+  
+
+}
+function setTheme() {
+  if(localStorage.getItem("theme") === "dark"){
+  navBar.classList.remove("bg-info");
+  navBar.classList.add("bg-secondary");
+  divTheme.classList.add("bg-dark");
+  inputTheme.classList.add("bg-dark");
+  textAreaTheme.classList.add("bg-dark");
+  divBoundTheme.classList.add("bg-dark");
+  toggleLabel.textContent = "Light Mode?"
+  localStorage.setItem("theme","dark");
+  
+  }
+
+}
+themeSwitch.addEventListener("click", changeTheme);
+
+//FUNCTION CALLS
+setTheme();
 getAndRenderNotes();
