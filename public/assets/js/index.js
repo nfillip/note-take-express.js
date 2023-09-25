@@ -228,7 +228,8 @@ function setTheme() {
   divBoundTheme.classList.add("bg-dark");
   toggleLabel.textContent = "Light Mode?"
   localStorage.setItem("theme","dark");
-  
+  } else {
+    localStorage.setItem("theme", "light")
   }
 
 }
